@@ -1,0 +1,60 @@
+:host { display: block; height: 100%; }
+
+.coque-card {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #e9e5df;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 6px 20px #30223d06;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.coque-photo {
+  position: relative;
+  margin: 10px 10px 0;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #f1efec;
+}
+
+.card-img-top {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  transition: transform 350ms ease;
+}
+
+.badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 9px 12px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px #00000008;
+}
+
+.badge.text-bg-success { background-color: #eef8f0 !important; color: #276440 !important; }
+.badge.text-bg-danger { background-color: #fff0ee !important; color: #a04442 !important; }
+.badge::before { content: '●'; margin-right: 6px; font-size: 8px; vertical-align: middle; }
+.card-body { padding: 23px 24px 20px; }
+.coque-label { margin: 0 0 9px; font-size: 9px; font-weight: 700; letter-spacing: 2px; color: #8a7c9b; }
+.card-title { margin: 0 0 7px; font-size: 22px; font-weight: 700; letter-spacing: -0.6px; color: #2c2734; }
+.coque-modele { margin: 0; font-size: 13px; color: #7a7480; }
+.coque-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 22px; padding-top: 16px; border-top: 1px solid #eeebf0; }
+.prix-label { font-size: 12px; color: #817989; }
+.coque-prix { margin: 0; font-size: 27px; font-weight: 750; letter-spacing: -1px; color: #6d4ca5; }
+.coque-prix span { font-size: 12px; letter-spacing: 0; font-weight: 600; }
+
+@media (hover: hover) {
+  .coque-card:hover { transform: translateY(-5px); box-shadow: 0 16px 32px #30223d12; }
+  .coque-card:hover .card-img-top { transform: scale(1.035); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coque-card, .card-img-top { transition: none; }
+  .coque-card:hover, .coque-card:hover .card-img-top { transform: none; }
+}

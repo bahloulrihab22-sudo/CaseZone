@@ -1,0 +1,105 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f7f5f0;
+  color: #292635;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.catalogue {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px 64px;
+}
+
+.catalogue-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 0;
+  border-bottom: 1px solid #e3dfd8;
+}
+
+.marque {
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -1.3px;
+}
+
+.marque-point { color: #7755cb; }
+.header-note { color: #726e7a; font-size: 13px; }
+
+.catalogue-intro {
+  position: relative;
+  overflow: hidden;
+  margin: 28px 0 40px;
+  padding: 46px 48px;
+  border: 1px solid #e3dcf2;
+  border-radius: 28px;
+  background: linear-gradient(115deg, #eee8f8 0%, #f1edf7 60%, #e4dcf3 100%);
+}
+
+.intro-label {
+  color: #68538c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin: 0 0 18px;
+}
+
+h1 {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(38px, 5.5vw, 66px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -2.5px;
+  margin: 0;
+}
+
+h1 span { color: #7755b8; }
+
+.catalogue-description {
+  position: relative;
+  z-index: 1;
+  margin: 22px 0 0;
+  color: #696174;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.intro-decoration {
+  position: absolute;
+  right: 65px;
+  top: -45px;
+  color: #c1addf;
+  font-size: 310px;
+  line-height: 1.2;
+  transform: rotate(-12deg);
+}
+
+.collection-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.collection-heading h2 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 750;
+  letter-spacing: -0.8px;
+}
+
+.collection-heading span { color: #77717d; font-size: 13px; }
+.row { --bs-gutter-x: 24px; row-gap: 24px; }
+
+@media (max-width: 767px) {
+  .catalogue { padding: 0 20px 40px; }
+  .header-note { max-width: 135px; text-align: right; font-size: 11px; }
+  .catalogue-intro { padding: 32px 24px; margin-bottom: 30px; }
+  .intro-decoration { right: -45px; top: 20px; font-size: 230px; opacity: 0.3; }
+  .collection-heading span { font-size: 11px; }
+}

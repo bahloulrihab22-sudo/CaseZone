@@ -1,0 +1,28 @@
+<article class="card coque-card">
+  <div class="coque-photo">
+  <img
+    class="card-img-top"
+    [src]="coque().photo"
+    [alt]="coque().nom"
+  >
+
+    @if (coque().disponible) {
+      <span class="badge text-bg-success">Disponible</span>
+    } @else {
+      <span class="badge text-bg-danger">Épuisée</span>
+    }
+  </div>
+
+  <div class="card-body">
+    <p class="coque-label">CASEZONE / COQUE</p>
+    <h3 class="card-title">{{ coque().nom }}</h3>
+    <p class="card-text coque-modele">{{ coque().modele }}</p>
+    <div class="coque-footer">
+      <span class="prix-label">Prix</span>
+      <p class="coque-prix">{{ coque().prix }} <span>DT</span></p>
+      <p class="card-text">
+      Ajoutée le : {{ coque().dateAjout | date:'dd/MM/yyyy' }}
+</p>
+    </div>
+  </div>
+</article>
