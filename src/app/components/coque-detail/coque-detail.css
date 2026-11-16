@@ -1,0 +1,20 @@
+﻿:host { display: block; margin-top: 32px; color: #18343b; }
+.produit { display: grid; grid-template-columns: 0.85fr 1.2fr; gap: 28px; }
+.photo { width: 100%; height: 100%; max-height: 460px; object-fit: contain; background: #eff1f4; border-radius: 24px; }
+.panneau { padding: 32px; border: 1px solid #dfe3da; border-radius: 24px; background: white; min-width: 0; }
+.informations p { margin-top: 20px; }
+.prix { font-size: 28px; font-weight: 700; }
+.avis { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 48px; }
+h2 { font-size: 28px; margin-bottom: 28px; }
+.commentaire { margin-top: 28px; overflow-wrap: anywhere; }
+.commentaire + .commentaire { border-top: 1px solid #e5e5e5; padding-top: 24px; }
+.auteur { display: flex; justify-content: space-between; gap: 16px; }
+.commentaire p { color: #72777d; margin-top: 12px; white-space: pre-wrap; }
+label { display: block; font-weight: 600; margin-bottom: 10px; }
+input, textarea { display: block; width: 100%; padding: 14px; border: 1px solid #d9dfd2; border-radius: 12px; margin-bottom: 22px; font: inherit; }
+textarea { resize: vertical; }
+@media (max-width: 700px) {
+  .produit, .avis { grid-template-columns: 1fr; }
+  .panneau { padding: 24px; }
+  .photo { height: 300px; }
+}

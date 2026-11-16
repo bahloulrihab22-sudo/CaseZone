@@ -1,1 +1,38 @@
-<p>coque-detail works!</p>
+﻿<button type="button" class="btn btn-outline-dark mb-4" (click)="retour.emit()">← Retour au catalogue</button>
+<section class="produit">
+  <img class="photo" [src]="coque().photo" [alt]="coque().nom">
+  <div class="panneau informations">
+    <h1>{{ coque().nom }}</h1>
+    <p>{{ coque().modele }}</p>
+    <p class="prix">{{ coque().prix }} DT</p>
+    <p [class.text-success]="coque().disponible" [class.text-danger]="!coque().disponible">{{ coque().disponible ? 'Disponible' : 'Épuisée' }}</p>
+    <hr>
+    <p>Couleur : <strong>{{ coque().couleur }}</strong></p>
+    <p>Date d'ajout : {{ coque().dateAjout | date:'dd/MM/yyyy' }}</p>
+    <p class="text-secondary">Identifiant : {{ coque().id }}</p>
+  </div>
+</section>
+<div class="avis">
+  <section class="panneau" aria-labelledby="titre-avis">
+    <h2 id="titre-avis">Les avis</h2>
+    <p class="text-secondary" aria-live="polite">{{ coque().comments.length }} commentaire{{ coque().comments.length > 1 ? 's' : '' }}</p>
+    @for (commentaire of coque().comments; track $index) {
+      <article class="commentaire">
+        <div class="auteur"><strong>{{ commentaire.nom }}</strong><span>{{ commentaire.note }}/5</span></div>
+        <p>{{ commentaire.message }}</p>
+      </article>
+    }
+  </section>
+  <section class="panneau" aria-labelledby="titre-formulaire">
+    <h2 id="titre-formulaire">Votre avis compte</h2>
+    <div>
+      <label for="nom">Nom</label>
+      <input id="nom" name="nom" [(ngModel)]="nom" required maxlength="80">
+      <label for="note">Note de 1 à 5</label>
+      <input id="note" name="note" type="number" [(ngModel)]="note" required min="1" max="5" step="1">
+      <label for="message">Commentaire</label>
+      <textarea id="message" name="message" [(ngModel)]="message" required maxlength="2000" rows="4"></textarea>
+      <button type="button" class="btn btn-dark" [disabled]="!avisValide()" (click)="publierAvis()">Ajouter mon avis</button>
+    </div>
+  </section>
+</div>

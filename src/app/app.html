@@ -4,6 +4,9 @@
     <span class="header-note">Du style, jusque dans les détails.</span>
   </header>
 
+  @if (coqueSelectionnee(); as coque) {
+    <app-coque-detail [coque]="coque" (retour)="coqueSelectionnee.set(null)" (avisAjoute)="ajouterAvis($event)" />
+  } @else {
   <section class="catalogue-intro">
     <p class="intro-label">LA COLLECTION CASEZONE</p>
     <h1>Votre téléphone.<br>Votre <span>signature.</span></h1>
@@ -19,8 +22,9 @@
   <div class="row">
     @for (coque of coques(); track coque.id) {
       <div class="col-12 col-md-6 col-lg-4">
-        <app-coque-card [coque]="coque" />
+        <app-coque-card [coque]="coque" (decouvrir)="coqueSelectionnee.set($event)" />
       </div>
     }
   </div>
+  }
 </div>

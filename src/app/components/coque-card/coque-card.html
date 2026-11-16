@@ -20,9 +20,9 @@
     <div class="coque-footer">
       <span class="prix-label">Prix</span>
       <p class="coque-prix">{{ coque().prix }} <span>DT</span></p>
-      <p class="card-text">
-      Ajoutée le : {{ coque().dateAjout | date:'dd/MM/yyyy' }}
-</p>
     </div>
+    <button type="button" class="btn btn-outline-dark mt-3" (click)="decouvrir.emit(coque())">
+      Découvrir
+    </button>
   </div>
 </article>
