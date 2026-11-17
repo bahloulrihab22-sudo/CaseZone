@@ -1,7 +1,43 @@
-﻿{
+{
   "coques": [
-    { "id": "1", "nom": "Coque blanche", "photo": "/images/coque_blanc.jpg", "prix": 25, "disponible": true, "dateAjout": "2026-11-16", "modele": "iPhone 15", "couleur": "Blanc", "comments": [{ "nom": "Sarah", "message": "Très jolie coque, elle protège bien mon téléphone !", "note": 5 }] },
-    { "id": "2", "nom": "Coque bleue", "photo": "/images/coque_bleu.jpg", "prix": 30, "disponible": true, "dateAjout": "2026-11-16", "modele": "Samsung Galaxy S24", "couleur": "Bleu", "comments": [] },
-    { "id": "3", "nom": "Coque rose", "photo": "/images/coque_ros.jpg", "prix": 20, "disponible": false, "dateAjout": "2026-11-16", "modele": "iPhone 14", "couleur": "Rose", "comments": [] }
+    {
+      "id": "1",
+      "nom": "Coque blanche",
+      "photo": "/images/coque_blanc.jpg",
+      "prix": 25,
+      "disponible": true,
+      "dateAjout": "2026-11-16",
+      "modele": "iPhone 15",
+      "couleur": "Blanc",
+      "comments": [
+        {
+          "nom": "Sarah",
+          "message": "Très jolie coque, elle protège bien mon téléphone !",
+          "note": 5
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nom": "Coque bleue",
+      "photo": "/images/coque_bleu.jpg",
+      "prix": 30,
+      "disponible": true,
+      "dateAjout": "2026-11-16",
+      "modele": "Samsung Galaxy S24",
+      "couleur": "Bleu",
+      "comments": []
+    },
+    {
+      "id": "3",
+      "nom": "Coque rose",
+      "photo": "/images/coque_ros.jpg",
+      "prix": 20,
+      "disponible": false,
+      "dateAjout": "2026-11-16",
+      "modele": "iPhone 14",
+      "couleur": "Rose",
+      "comments": []
+    }
   ]
 }
