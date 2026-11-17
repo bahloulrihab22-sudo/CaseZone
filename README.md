@@ -7,14 +7,10 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 To start a local development server, run:
 
 ```bash
-npm start
+ng serve
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-`npm start` starts both Angular and the JSON API (`http://localhost:3000/coques`) backed by `bd.json`. Both are needed to display the catalogue and save reviews. Stop them with Ctrl+C.
-
-To run them separately, use `npm run server` in one terminal and `npm run start:app` in another.
 
 ## Code scaffolding
 
