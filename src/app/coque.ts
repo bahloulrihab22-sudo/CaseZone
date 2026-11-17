@@ -6,7 +6,7 @@ export interface Coque {
   photo: string;
   prix: number;
   disponible: boolean;
-  dateAjout: Date;
+  dateAjout: string;
   modele: string;
   couleur: string;
   comments: Commentaire[];

@@ -4,8 +4,16 @@
     <span class="header-note">Du style, jusque dans les détails.</span>
   </header>
 
+  @if (erreur()) {
+    <div class="alert alert-danger" role="alert">
+      {{ erreur() }}
+      @if (!coqueSelectionnee()) {
+        <button type="button" class="btn btn-outline-dark" (click)="chargerCoques()">Réessayer</button>
+      }
+    </div>
+  }
   @if (coqueSelectionnee(); as coque) {
-    <app-coque-detail [coque]="coque" (retour)="coqueSelectionnee.set(null)" (avisAjoute)="ajouterAvis($event)" />
+    <app-coque-detail [coque]="coque" [enregistrement]="enregistrement()" (retour)="coqueSelectionnee.set(null); erreur.set('')" (avisAjoute)="ajouterAvis($event)" />
   } @else {
   <section class="catalogue-intro">
     <p class="intro-label">LA COLLECTION CASEZONE</p>
@@ -20,6 +28,11 @@
   </div>
 
   <div class="row">
+    @if (chargement()) {
+      <p role="status">Chargement des coques…</p>
+    } @else if (!erreur() && coques().length === 0) {
+      <p>Aucune coque disponible.</p>
+    }
     @for (coque of coques(); track coque.id) {
       <div class="col-12 col-md-6 col-lg-4">
         <app-coque-card [coque]="coque" (decouvrir)="coqueSelectionnee.set($event)" />

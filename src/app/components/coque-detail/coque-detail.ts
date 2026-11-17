@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, effect, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Commentaire } from '../../commentaire';
 import { Coque } from '../../coque';
@@ -12,11 +12,21 @@ import { DatePipe } from '@angular/common';
 })
 export class CoqueDetail {
   coque = input.required<Coque>();
+  enregistrement = input(false);
   retour = output<void>();
   avisAjoute = output<Commentaire>();
   nom = '';
   note = 5;
   message = '';
+
+  constructor() {
+    effect(() => {
+      this.coque();
+      this.nom = '';
+      this.note = 5;
+      this.message = '';
+    });
+  }
 
   avisValide(): boolean {
     return this.nom.trim().length > 0 && this.nom.length <= 80
@@ -25,10 +35,7 @@ export class CoqueDetail {
   }
 
   publierAvis() {
-    if (!this.avisValide()) return;
+    if (!this.avisValide() || this.enregistrement()) return;
     this.avisAjoute.emit({ nom: this.nom.trim(), note: this.note, message: this.message.trim() });
-    this.nom = '';
-    this.note = 5;
-    this.message = '';
   }
 }
